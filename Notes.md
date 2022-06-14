@@ -1,6 +1,6 @@
-# RH294 - Ansible - Juin 2022
+# Notes
 
-- [RH294 - Ansible - Juin 2022](#rh294---ansible---juin-2022)
+- [Notes](#notes)
   - [Tags](#tags)
   - [Lookup](#lookup)
   - [Variable names](#variable-names)
