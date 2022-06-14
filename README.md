@@ -5,4 +5,9 @@
 ## Table of content
 
 - [Intro](Intro.md)
+- [Basics](Basics.md)
 - [Notes](Notes.md)
+
+## Maintainers
+
+- [HeavenSleep](https://github.com/HeavenSleep)

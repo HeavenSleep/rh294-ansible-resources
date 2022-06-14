@@ -51,7 +51,7 @@ And to skip specific tags:
 ansible-playbook myplaybook.yml --skip-tags mytag,myothertag
 ```
 
-*See more at*: https://docs.ansible.com/ansible/latest/user_guide/playbooks_tags.html
+*See more at*: [Ansible documentation](https://docs.ansible.com/ansible/latest/user_guide/playbooks_tags.html)
 
 ## Lookup
 
@@ -65,7 +65,7 @@ tasks:
       msg: "motd value is {{ motd_value }}"
 ```
 
-*See more at*: https://docs.ansible.com/ansible/latest/user_guide/playbooks_lookups.html
+*See more at*: [Ansible documentation](https://docs.ansible.com/ansible/latest/user_guide/playbooks_lookups.html)
 
 ## Variable names
 
@@ -106,10 +106,13 @@ role/templates
 Variables can be defined and overriden at many levels, here is the hierarchy from the most to least:
 
 1. exta vars (always win precedence)
+
     ```bash
     ansible-playbook -e "foo=bar"
     ```
+
 2. role and include_role params
+
    ```yaml
    - name: Pass variables to role
      include_role:
@@ -117,23 +120,31 @@ Variables can be defined and overriden at many levels, here is the hierarchy fro
      vars:
        foo: bar
    ```
+
    and
+
    ```yaml
    roles:
      - { name: myrole, foo: bar }
    ```
+
 3. set_facts / registered vars
+
    ```yaml
    - name: Setting fact
      set_fact:
        foo: bar
    ```
+
 4. include_vars
+
    ```yaml
    - name: Dynamic include_vars
      include_vars: path/to/foo.yml
    ```
+
 5. task vars (only for the task)
+
    ```yaml
    - name: Some task
      copy:
@@ -141,7 +152,9 @@ Variables can be defined and overriden at many levels, here is the hierarchy fro
      vars:
        foo: bar
    ```
+
 6. block vars (only for tasks in block)
+
    ```yaml
    - block:
        - name: Some task in Block
@@ -151,15 +164,19 @@ Variables can be defined and overriden at many levels, here is the hierarchy fro
      vars:
        foo: bar
    ```
+
 7. role vars (defined in role/vars/main.yml)
-8.  play vars_files
+8. play vars_files
+
     ```yaml
     - hosts: all
       ...
       vars_files:
         - path/to/foo.yml
     ```
-9.  play vars_prompt
+
+9. play vars_prompt
+
     ```yaml
     - hosts: all
       ...
@@ -168,13 +185,16 @@ Variables can be defined and overriden at many levels, here is the hierarchy fro
           prompt: What is your foo?
           private: no
     ```
+
 10. play vars
+
     ```yaml
     - hosts: all
       ...
       vars:
         foo: bar
     ```
+
 11. host facts / cached set_facts
 12. playbook host_vars/*
 13. inventory host_vars/*
@@ -187,4 +207,4 @@ Variables can be defined and overriden at many levels, here is the hierarchy fro
 20. role defaults (defined in role/defaults/main.yml)
 21. command line values (for example, -u my_user, these are not variables)
 
-*See more*: https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#understanding-variable-precedence
+*See more*: [Ansible documentation](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#understanding-variable-precedence)
