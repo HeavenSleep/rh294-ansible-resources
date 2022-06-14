@@ -21,7 +21,7 @@ Ansible is an open source IT automation tool that automates provisioning, config
 
 ## Why use Ansible
 
-Ansible is the most straight forward, simplest abd yet still powerful automation software.
+Ansible is the most straight forward, simplest and yet still powerful automation software.
 
 It use [SSH](https://en.wikipedia.org/wiki/Secure_Shell) to connect to remote machines with no more requirements on the target machine.
 
